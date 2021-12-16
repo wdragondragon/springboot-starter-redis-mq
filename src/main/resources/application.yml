@@ -1,0 +1,33 @@
+server:
+  port: 19091
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+    default-property-inclusion: non_null
+  redis:
+    database: 0
+    host: 39.96.83.89
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    password: ''
+    port: 9736
+
+logging:
+  config: classpath:logback.xml
+  level:
+    root: info
