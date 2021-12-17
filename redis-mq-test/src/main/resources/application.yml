@@ -6,8 +6,6 @@ server:
       charset: UTF-8
       enabled: true
 
-
-
 spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -17,7 +15,7 @@ spring:
     default-property-inclusion: non_null
   redis:
     database: 0
-    host: 39.96.83.89
+    host: remotehost
     jedis:
       pool:
         max-active: 8

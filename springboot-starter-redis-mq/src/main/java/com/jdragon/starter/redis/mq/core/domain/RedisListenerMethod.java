@@ -1,4 +1,4 @@
-package org.example.redis.mq.starter.core.domain;
+package com.jdragon.starter.redis.mq.core.domain;
 
 import org.springframework.context.ApplicationContext;
 

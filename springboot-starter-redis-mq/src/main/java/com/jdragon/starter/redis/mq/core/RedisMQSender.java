@@ -1,8 +1,8 @@
-package org.example.redis.mq.starter.core;
+package com.jdragon.starter.redis.mq.core;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.redis.mq.starter.core.domain.RedisMessage;
+import com.jdragon.starter.redis.mq.core.domain.RedisMessage;
 import org.springframework.data.redis.connection.stream.ObjectRecord;
 import org.springframework.data.redis.connection.stream.StreamRecords;
 import org.springframework.data.redis.core.StringRedisTemplate;

@@ -10,9 +10,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <version>1.0-SNAPSHOT</version>
-    <groupId>org.example.redis.mq.starter</groupId>
-    <artifactId>springboot-redis-mq-starter</artifactId>
-    <name>springboot-redis-mq-starter</name>
+    <groupId>com.jdragon.starter.redis.mq</groupId>
+    <artifactId>springboot-starter-redis-mq</artifactId>
+    <name>springboot-starter-redis-mq</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,13 +42,4 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>

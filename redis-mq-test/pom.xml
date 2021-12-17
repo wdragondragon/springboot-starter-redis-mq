@@ -22,8 +22,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.example.redis.mq.starter</groupId>
-            <artifactId>springboot-redis-mq-starter</artifactId>
+            <groupId>com.jdragon.starter.redis.mq</groupId>
+            <artifactId>springboot-starter-redis-mq</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

@@ -1,9 +1,9 @@
-package org.example.redis.mq.starter;
+package com.jdragon.starter.redis.mq;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.redis.mq.starter.core.RedisListenerAnnotationScanPostProcesser;
-import org.example.redis.mq.starter.core.RedisMQSender;
-import org.example.redis.mq.starter.core.RedisMessageQueueRegister;
+import com.jdragon.starter.redis.mq.core.RedisListenerAnnotationScanPostProcesser;
+import com.jdragon.starter.redis.mq.core.RedisMQSender;
+import com.jdragon.starter.redis.mq.core.RedisMessageQueueRegister;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;

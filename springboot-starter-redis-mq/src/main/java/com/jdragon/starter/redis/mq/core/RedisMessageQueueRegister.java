@@ -1,9 +1,9 @@
-package org.example.redis.mq.starter.core;
+package com.jdragon.starter.redis.mq.core;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.redis.mq.starter.core.domain.RedisListenerMethod;
-import org.example.redis.mq.starter.core.domain.RedisMessage;
+import com.jdragon.starter.redis.mq.core.domain.RedisListenerMethod;
+import com.jdragon.starter.redis.mq.core.domain.RedisMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;

@@ -1,4 +1,4 @@
-package org.example.redis.mq.starter.annotations;
+package com.jdragon.starter.redis.mq.annotations;
 
 import org.springframework.core.annotation.AliasFor;
 

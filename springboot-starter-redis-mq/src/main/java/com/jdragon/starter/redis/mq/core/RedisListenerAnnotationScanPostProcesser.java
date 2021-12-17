@@ -1,7 +1,7 @@
-package org.example.redis.mq.starter.core;
+package com.jdragon.starter.redis.mq.core;
 
-import org.example.redis.mq.starter.annotations.RedisListener;
-import org.example.redis.mq.starter.core.domain.RedisListenerMethod;
+import com.jdragon.starter.redis.mq.annotations.RedisListener;
+import com.jdragon.starter.redis.mq.core.domain.RedisListenerMethod;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.annotation.AnnotatedElementUtils;

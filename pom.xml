@@ -11,6 +11,6 @@
 
     <modules>
         <module>redis-mq-test</module>
-        <module>springboot-redis-mq-starter</module>
+        <module>springboot-starter-redis-mq</module>
     </modules>
 </project>

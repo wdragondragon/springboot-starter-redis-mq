@@ -1,8 +1,8 @@
 package org.example.redis.mq.test.listener;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.redis.mq.starter.annotations.RedisListener;
-import org.example.redis.mq.starter.core.domain.RedisMessage;
+import com.jdragon.starter.redis.mq.annotations.RedisListener;
+import com.jdragon.starter.redis.mq.core.domain.RedisMessage;
 import org.example.redis.mq.test.entity.Job;
 import org.springframework.stereotype.Component;
 
