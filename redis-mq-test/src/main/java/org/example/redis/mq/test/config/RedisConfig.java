@@ -1,25 +1,16 @@
-package org.example.redis.config;
+package org.example.redis.mq.test.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.stream.Consumer;
-import org.springframework.data.redis.connection.stream.MapRecord;
-import org.springframework.data.redis.connection.stream.ReadOffset;
-import org.springframework.data.redis.connection.stream.StreamOffset;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.data.redis.stream.StreamMessageListenerContainer;
-import org.springframework.data.redis.stream.Subscription;
-
-import java.util.Map;
 
 @Slf4j
 @Configuration
@@ -66,41 +57,4 @@ public class RedisConfig extends CachingConfigurerSupport {
         stringRedisTemplate.setConnectionFactory(redisConnectionFactory);
         return stringRedisTemplate;
     }
-
-    @Bean
-    public StreamMessageListenerContainer<String, MapRecord<String, String, String>> streamMessageListenerContainer(RedisConnectionFactory redisConnectionFactory) {
-        StreamMessageListenerContainer<String, MapRecord<String, String, String>> stringMapRecordStreamMessageListenerContainer = StreamMessageListenerContainer.create(redisConnectionFactory);
-        stringMapRecordStreamMessageListenerContainer.start();
-        return stringMapRecordStreamMessageListenerContainer;
-    }
-
-
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Bean
-    public Subscription subscription(StreamMessageListenerContainer<String, MapRecord<String, String, String>> streamMessageListenerContainer) {
-        String streamKey = "streamKey";
-        String consumerGroupName = "group";
-        String consumerName = "consumer";
-        try {
-            stringRedisTemplate.opsForStream().groups(streamKey).stream().forEach(e -> log.info(e.groupName()));
-        } catch (Exception e) {
-            stringRedisTemplate.opsForStream().createGroup(streamKey, consumerGroupName);
-        }
-
-        return streamMessageListenerContainer.receive(
-                Consumer.from(consumerGroupName, consumerName),
-                StreamOffset.create(streamKey, ReadOffset.lastConsumed()),
-                message -> {
-                    log.info("stream message。messageId={}, stream={}, body={}",
-                            message.getId(), message.getStream(), message.getValue());
-                    Map<String, String> record = message.getValue();
-                    log.info("[{}]", record);
-                    stringRedisTemplate.opsForStream().acknowledge(consumerGroupName, message);
-                });
-    }
-
-    @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
 }

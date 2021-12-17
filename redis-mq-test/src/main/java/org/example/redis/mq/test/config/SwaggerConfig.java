@@ -1,4 +1,4 @@
-package org.example.redis.config;
+package org.example.redis.mq.test.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
