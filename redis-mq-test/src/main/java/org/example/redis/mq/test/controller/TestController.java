@@ -69,12 +69,14 @@ public class TestController {
     @ApiOperation("redisMQSender2")
     public String redisMQSender2() {
         String streamKey = "streamKey2";
-        Job job = new Job();
-        job.setId(1);
+
         HashMap<String, Object> param = new HashMap<>();
         param.put("id", 1);
         param.put("name", "张三");
         param.put("paramInline", new HashMap<>());
+
+        Job job = new Job();
+        job.setId(1);
         job.setParam(param);
         job.setCreateDate(new Date());
         job.setEndDate(LocalDateTime.now());

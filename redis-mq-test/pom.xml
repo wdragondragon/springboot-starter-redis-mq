@@ -22,7 +22,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.jdragon.starter.redis.mq</groupId>
+            <groupId>com.jdragon.starter</groupId>
             <artifactId>springboot-starter-redis-mq</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
